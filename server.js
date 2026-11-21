@@ -108,11 +108,11 @@ syncPastSalesToGraph();
 async function sendOTPEmail(email, otp) {
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
     
-    sendSmtpEmail.subject = `🔑 ${otp} is your NEXUS LEGENDS Access Code`;
+    sendSmtpEmail.subject = `🔑 ${otp} is your MBC AUCTION LEAGUE Access Code`;
     
     sendSmtpEmail.htmlContent = `
         <div style="font-family: Arial, sans-serif; background-color: #0a0f16; color: #ffffff; padding: 40px; text-align: center; border-radius: 20px;">
-            <h1 style="color: #00e5ff; margin-bottom: 10px;">NEXUS LEGENDS</h1>
+            <h1 style="color: #00e5ff; margin-bottom: 10px;">LEVERAGE EFOOTBALL COMMUNITY</h1>
             <p style="color: #64748b; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">Identity Verification</p>
             <hr style="border: 0; border-top: 1px solid #1e293b; margin: 20px 0;">
             <p style="font-size: 16px;">Use the following code to access the Auction Arena:</p>
@@ -123,7 +123,7 @@ async function sendOTPEmail(email, otp) {
         </div>
     `;
     
-    sendSmtpEmail.sender = { "name": "NEXUS LEGENDS ARENA", "email": process.env.BREVO_SENDER_EMAIL };
+    sendSmtpEmail.sender = { "name": "MBC AUCTION ARENA", "email": process.env.BREVO_SENDER_EMAIL };
     sendSmtpEmail.to = [{ "email": email }];
     return apiInstance.sendTransacEmail(sendSmtpEmail);
 }
